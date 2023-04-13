@@ -694,12 +694,6 @@ local function bitBuffer(stream)
         writeByte(bit32.rshift(n, 8))
         writeByte(bit32.band(n, 255))
     end
-  
-    local function writeVector3(n)
-        writeFloat32(n.X)
-        writeFloat32(n.Y)
-        writeFloat32(n.Z)
-    end
 
     local function writeInt32(n)
         assert(type(n) == "number", "argument #1 to BitBuffer.writeInt32 should be a number")
@@ -821,6 +815,12 @@ local function bitBuffer(stream)
         writeByte(bit32.band(bit32.lshift(exponent + 126, 7), 255) + bit32.rshift(mantissa, 16)) -- 1 exponent + 7 mantissa
         writeByte(bit32.band(bit32.rshift(mantissa, 8), 255)) -- 8 mantissa
         writeByte(bit32.band(mantissa, 255)) -- 8 mantissa
+    end
+    
+       local function writeVector3(n)
+        writeFloat32(n.X)
+        writeFloat32(n.Y)
+        writeFloat32(n.Z)
     end
 
     local function writeFloat64(n)
