@@ -1335,7 +1335,8 @@ local function bitBuffer(stream)
         setPointerByte = setPointerByte,
         setPointerByteFromEnd = setPointerByteFromEnd,
         isFinished = isFinished,
-
+        
+        writeVector3 = writeVector3,
         writeBits = writeBits,
         writeByte = writeByte,
         writeUnsigned = writeUnsigned,
