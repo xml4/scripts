@@ -696,8 +696,6 @@ local function bitBuffer(stream)
     end
   
     local function writeVector3(n)
-        assert(typeof(v3) == "Vector3", "argument #1 to BitBuffer.writeVector3 should be a Vector3")
-
         writeFloat32(v3.X)
         writeFloat32(v3.Y)
         writeFloat32(v3.Z)
