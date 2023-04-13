@@ -696,9 +696,9 @@ local function bitBuffer(stream)
     end
   
     local function writeVector3(n)
-        writeFloat32(v3.X)
-        writeFloat32(v3.Y)
-        writeFloat32(v3.Z)
+        writeFloat32(n.X)
+        writeFloat32(n.Y)
+        writeFloat32(n.Z)
     end
 
     local function writeInt32(n)
